@@ -1,12 +1,8 @@
----
-
 # 📘 Milestone 2 Documentation
 
 ## Vector Database, Semantic Search & Role-Based Access Control (RBAC)
 
 **Project:** Company Internal Chatbot with Role-Based Access Control (RBAC) and Retrieval-Augmented Generation (RAG)
-
----
 
 ## 1. Milestone Overview
 
@@ -20,7 +16,6 @@ While Milestone 1 focused on preparing data safely, Milestone 2 ensures that:
 
 This milestone transforms static data into a **secure, queryable enterprise knowledge base**.
 
----
 
 ## 2. Milestone Scope
 
@@ -38,7 +33,6 @@ This milestone corresponds to:
 * **Week 3:** Embedding Generation & Vector Database Indexing
 * **Week 4:** Role-Based Semantic Search & RBAC Enforcement
 
----
 
 ## 3. Objectives
 
