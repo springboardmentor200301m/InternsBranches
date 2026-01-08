@@ -1,5 +1,3 @@
----
-
 # 📕 Milestone 3 Documentation
 
 ## Authentication, RBAC Middleware & Retrieval-Augmented Generation (RAG)
@@ -7,8 +5,6 @@
 **Project:** Company Internal Chatbot with Role-Based Access Control (RBAC)
 **Milestone Duration:** Weeks 5–6
 **Milestone Status:** ✅ Completed
-
----
 
 ## 1. Milestone Overview
 
