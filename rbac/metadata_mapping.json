@@ -1,0 +1,3836 @@
+[
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 0,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "# FinSolve Technologies Engineering Document ## 1. Introduction ### 1.1 Company Overview FinSolve Te..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 1,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### 1.2 Purpose This engineering document outlines the technical architecture, development process..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 2,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". It serves as a comprehensive guide for engineering teams, stakeholders, and partners to ensure ali..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 3,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "and DevOps practices * Monitoring and maintenance protocols * Future technology roadmap ### 1.4 Docu..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 4,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". System Architecture ### 2.1 Overview FinSolve's architecture is a microservices-based, cloud-nativ..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 5,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### 2.2 High-Level Architecture ``` [Client Apps] \u251c\u2500\u2500 Mobile Apps (iOS, Android) \u251c\u2500\u2500 Web App (Reac..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 6,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "\u251c\u2500\u2500 Redis (Caching, Session Management) \u2514\u2500\u2500 Amazon S3 (Documents, Backups) [Infrastructure] \u251c\u2500\u2500 AWS ..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 7,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". * **Web Application**: A responsive Single Page Application (SPA) built with React, Redux, and Tai..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 8,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". #### 2.3.2 API Gateway * Centralized entry point for all client requests * Implements authenticati..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 9,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Supports multi-factor authentication and Single Sign-On (SSO). * **Payment Processing Service**: H..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 10,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". * **Notification Service**: Manages push notifications, emails, and SMS alerts based on user prefe..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 11,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". * **Amazon S3**: Object storage for documents, statements, user uploads, and encrypted backups. ##..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 12,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### 2.4 Scalability Architecture #### 2.4.1 Horizontal Scaling * Kubernetes Horizontal Pod Autosca..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 13,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". * Read replicas for analytics and reporting workloads. * MongoDB sharding for user data distributi..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 14,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### 2.5 Resilience and Fault Tolerance #### 2.5.1 High Availability * Multi-Availability Zone (AZ)..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 15,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". * Fallback mechanisms for degraded service modes. #### 2.5.3 Disaster Recovery * Regular backups t..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 16,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". * Eventual consistency with compensation transactions where appropriate. ## 3..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 17,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Technology Stack ### 3.1 Comprehensive Technology Matrix | Layer | Primary Technologies | Supporti..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 18,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "LTS, Python 3.11 (FastAPI), Go 1.19 | Express.js, Pydantic, Gin | Jest, Pytest, Go test | | APIs | R..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 19,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "Nexus, Harbor | JUnit, pytest | | Monitoring | Prometheus, Grafana, ELK Stack | Jaeger, Kiali, Fluen..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 20,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". * **Scalability**: Ability to handle projected growth (10x in 3 years). * **Maturity**: Preference..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 21,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". * Dependency upgrade schedule: Security patches (immediate), Minor versions (monthly), Major versi..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 22,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". * **Daily Standups**: 15-minute meetings to track progress and address blockers. * **Sprint Review..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 23,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". * **Development Team**: Self-organizes to deliver sprint commitments. * **Technical Lead**: Ensure..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 24,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". * Engineering leads validate technical feasibility and estimate complexity using story points (Fib..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 25,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". * Design reviews conducted with senior engineers and stakeholders..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 26,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". #### 4.2.3 Coding Standards * Language-specific style guides enforced via linters: * JavaScript/Ty..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 27,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "* One from a peer engineer * One from a senior engineer or technical lead * Automated checks must pa..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 28,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "tests * Performance tests * Test environments: * Development (automated deployment of feature branch..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 29,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "* Require manual approval * Use blue-green or canary deployment strategies ### 4.3 Version Control S..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 30,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "* `feat:` New features * `fix:` Bug fixes * `docs:` Documentation changes * `style:` Code formatting..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 31,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "messages * Release notes published to internal documentation portal * Post-release monitoring period..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 32,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Security and Compliance ### 5.1 Security Architecture #### 5.1.1 Authentication and Authorization ..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 33,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "for fine-grained permissions * Regular permission audits and least-privilege enforcement #### 5.1.2 ..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 34,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "data) * Level 4: Restricted (payment credentials, authentication tokens) #### 5.1.3 Network Security..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 35,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "abuse * Input validation and sanitization * Request signing for partner APIs ### 5.2 Compliance Fram..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 36,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "Data Security Standard (PCI-DSS)**: * Level 1 compliance for payment processing * Regular penetratio..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 37,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "* Automated compliance checks in CI/CD pipeline * Continuous control monitoring via AWS Config ### 5..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 38,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "30 days * Low: Next planned release #### 5.3.2 Incident Response * **Security Operations Center (SOC..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 39,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "Evidence collection * Remediation and recovery * Post-incident analysis and lessons learned #### 5.3..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 40,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Testing and Quality Assurance ### 6.1 Testing Strategy #### 6.1.1 Test Pyramid * **Unit Tests**: *..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 41,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "user journeys * Cover critical business flows * Implemented with Cypress (web) and Appium (mobile) #..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 42,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "* Manual penetration testing quarterly * Secure code reviews for critical components * **Accessibili..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 43,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "pipelines * Parallelized test execution for faster feedback * Automatic retry for flaky tests (maxim..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 44,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "### 6.3 Defect Management #### 6.3.1 Bug Tracking * Jira for logging and tracking defects * Required..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 45,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". actual results, environment * Severity classification: * S1 (Critical): System unusable, data corr..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 46,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "within 2 weeks * S4: Prioritized based on business impact #### 6.3.3 Bug Triage Process * Daily tria..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 47,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Deployment and DevOps Practices ### 7.1 CI/CD Pipeline #### 7.1.1 Continuous Integration * Every c..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 48,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "Environment**: * Scheduled deployments (bi-weekly) * Blue-green deployment strategy * Automated smok..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 49,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "(VPC, subnets, security groups) * Compute resources (EC2, ECS, Lambda) * Database services (RDS, Dyn..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 50,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "and Secrets for application settings * **Config Management**: * Environment variables for non-sensit..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 51,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "builds to minimize image size * Non-root user execution * Image scanning with Trivy #### 7.3.2 Kuber..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 52,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "* Immutable tags with git commit hashes * Image retention policies ### 7.4 Release Management #### 7..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 53,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "Hotfix Process * Critical issues patched directly from `main` * Abbreviated testing focused on the s..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 54,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Monitoring and Maintenance ### 8.1 Monitoring Strategy #### 8.1.1 Metrics and Dashboards * **Infra..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 55,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "* Business metrics #### 8.1.2 Key Performance Indicators * **Technical KPIs**: * API latency (P95 < ..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 56,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "* Email for informational alerts * **Alert Configuration**: * Avoid alert fatigue through tuned thre..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 57,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "logs * Access logs * Audit logs * System logs #### 8.2.2 Log Management * **Retention Policies**: * ..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 58,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "### 8.3 Maintenance Procedures #### 8.3.1 Routine Maintenance * **Patching Schedule**: * OS updates:..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 59,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "Management * Dedicated 20% of sprint capacity to technical debt * Quarterly architectural review * D..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 60,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Future Roadmap ### 9.1 Short-Term Initiatives (Q2\u2013Q4 2025) #### 9.1.1 AI and Machine Learning Inte..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 61,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "Assets Support**: * Cryptocurrency wallet integration * Support for major cryptocurrencies (Bitcoin,..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 62,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "* **Regional Compliance**: * Regulatory adapters for new markets * Regional payment method integrati..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 63,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "* **API Marketplace**: * Developer portal and SDK * Partner integration platform * Revenue sharing m..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 64,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "with Istio * Self-healing infrastructure * Chaos engineering practice ## 10..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 65,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Appendices ### 10.1 Glossary of Terms | Term | Definition | |------|------------| | ACID | Atomici..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 66,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "structuring an application as a collection of loosely coupled services | | OAuth 2.0 | Industry-stan..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 67,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "best practices | | PCI-DSS Guidelines | Security Portal | Payment security compliance | | Kubernetes..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 68,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "| | Security Team | security@finsolve.com | 1 hour | | DevOps Support | devops@finsolve.com | 2 hour..."
+  },
+  {
+    "source": "engineering_master_doc.md",
+    "chunk_id": 69,
+    "accessible_roles": [
+      "engineering",
+      "C-Level",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". For clarifications, contact the Engineering Lead at engineering@finsolve.com.* *Last Updated: May ..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 0,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "# Financial Report for FinSolve Technologies Inc. - 2024 Executive Summary: ------------------------..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 1,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". However, these pressures were balanced by cost-saving measures in operational efficiency, strong g..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 2,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Year-Over-Year (YoY) Analysis: ------------------------------------------- FinSolve Technologies's..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 3,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". This suggests that while revenue growth is strong, controlling vendor costs and maintaining health..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 4,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Training and education expenses** \u2013 30% of vendor services. - **Software subscriptions** (clou..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 5,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 2. **Software Subscriptions** - A significant expense totaling $25M, up 22% from 2023. Given the h..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 6,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". While employee growth is essential, optimizing benefits packages and hiring processes could reduce..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 7,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Cash Flow Analysis: ------------------------------------------- FinSolve Technologies\u2019s **cash flo..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 8,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Cash Flow from Investing Activities**: Investments in research and development, new market ent..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 9,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Cash Flow from Financing Activities**: Financing activities remained consistent, with a small ..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 10,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 2. **Net Margin**: 12% (Consistent with 2023) - *Industry Benchmark*: 10% - FinSolve Technologies\u2019..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 11,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 4. **Operating Expenses to Revenue Ratio**: 40% - *Industry Benchmark*: 45% - A lower operating ex..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 12,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Operational Insights: ------------------------------------------- In 2024, operational efficiency ..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 13,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". **Recommendations**: 1. **Vendor Management**: Continue negotiations for better pricing, especiall..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 14,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 3. **Employee Cost Optimization**: As the headcount grows, consider introducing more flexible bene..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 15,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". **Risk: Vendor Cost Inflation** \u2013 Vendor services, particularly marketing and software subscriptio..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 16,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". **Improved working capital management** and streamlining payment processes can significantly reduc..."
+  },
+  {
+    "source": "financial_summary.md",
+    "chunk_id": 17,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 4. **Risk: Regulatory Compliance** \u2013 As the company expands globally, navigating complex regulator..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 0,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "# Quarterly Financial Report - FinSolve Technologies Inc. 2024 ## Executive Summary In 2024, FinSolv..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 1,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". This report provides a comprehensive overview of FinSolve Technologies\u2019s financial results, expens..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 2,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Key financial highlights include: - **Revenue**: $2.1 billion, up 22% YoY, driven by strong custom..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 3,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Marketing Spend**: $500 million, focused on digital marketing campaigns and brand awareness in..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 4,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Employee Benefits & HR**: $45 million, up 15% YoY due to increased staffing and employee devel..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 5,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Cash Flow Analysis Cash flow performance underscored FinSolve Technologies\u2019s financial health:..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 6,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Risks & Mitigation - **Risk**: Increased vendor costs due to market conditions. - **Mitigation..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 7,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". --- ## Q2 - April to June 2024 ### Quarterly Financial Overview Q2 2024 built on Q1\u2019s momentum, wi..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 8,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Operating Income**: $550 million, reflecting increased revenue and disciplined cost management..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 9,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Quarterly Expense Breakdown Expenses were aligned with strategic growth objectives: - **Vendor..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 10,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Other Operational Expenses**: $33 million, covering promotional events and regional marketing ..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 11,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Cash Flow from Financing**: $25 million, supporting market expansion through additional financ..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 12,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". --- ## Q3 - July to September 2024 ### Quarterly Financial Overview Q3 2024 saw continued growth, ..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 13,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Net Income**: $300 million, up 15% YoY, bolstered by top-line growth and margin expansion. - *..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 14,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Quarterly Expense Breakdown Expenses supported retention and expansion strategies: - **Vendor ..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 15,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Other Operational Expenses**: $35 million, covering events, merchant partnerships, and regiona..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 16,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Risks & Mitigation - **Risk**: Vendor cost inflation in Latin America. - **Mitigation**: Reneg..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 17,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". --- ## Q4 - October to December 2024 ### Quarterly Financial Overview Q4 2024 capped the year with..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 18,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Net Income**: $325 million, up 18% YoY, driven by top-line growth and margin expansion. - **Ma..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 19,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Employee Benefits & HR**: $55 million, driven by seasonal hiring and performance-based incenti..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 20,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Cash Flow Analysis Cash flow performance supported long-term growth: - **Cash Flow from Operat..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 21,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Mitigation**: Streamlined procurement processes and negotiated fixed-cost agreements to contro..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 22,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Gross margin improved from 58% in Q1 to 64% in Q4, reflecting enhanced pricing strategies and oper..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 23,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Cash flow from operations reached $1.5 billion, up 14% YoY, enabling $260 million in investments f..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 24,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ## Recommendations for 2025 1. **Optimize Marketing ROI**: Leverage data analytics to refine influ..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 25,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 4. **Enhance Cash Flow Management**: Further streamline accounts receivable processes to reduce DS..."
+  },
+  {
+    "source": "quarterly_financial_report.md",
+    "chunk_id": 26,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "finance",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". This report highlights our commitment to delivering value to stakeholders while navigating market ..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 0,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "# Employee Handbook ## Table of Contents 1. [Welcome & Introduction](#welcome--introduction) 2. [Emp..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 1,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". [Training & Development](#training--development) 10. [Performance & Feedback](#performance--feedba..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 2,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Our mission is to deliver high-quality, sustainable products and services that create value for ou..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 3,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Company Overview Founded in 2016, FinSolve Technologies is a leading player in fintech with a ..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 4,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **First Week**: Policy orientation, compliance training, role-specific training, buddy program. ..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 5,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Employee Benefits #### Statutory Benefits | Benefit | Details | |---------|---------| | **Empl..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 6,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "two children; as per Maternity Benefit Act | | **Bonus** | As per Payment of Bonus Act; minimum 8.33..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 7,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Accident & Life Insurance**: Additional coverage for accidental death or disability. - **Welln..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 8,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". --- ## Leave Policies ### Types of Leave | Leave Type | Entitlement/Details | |------------|------..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 9,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "| 7-15 days (company policy; not statutory) | | **Bereavement Leave** | 3-7 days for immediate famil..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 10,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - Sick leave for more than 2 days requires a medical certificate. - Emergency leave to be communic..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 11,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - Employees may choose restricted holidays as per personal preference. --- ## Work Hours & Attenda..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 12,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - Late arrivals/early departures must be notified to the manager. - Three or more late arrivals in..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 13,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - Compensatory off may be provided in lieu of overtime for certain roles. --- ## Code of Conduct &..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 14,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Anti-Discrimination & Equal Opportunity - No discrimination based on gender, caste, religion, ..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 15,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Substance Abuse Policy - Possession, use, or distribution of drugs or alcohol on company premi..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 16,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Conflict Resolution Process - Attempt informal resolution with the concerned party. - If unres..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 17,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Accident & Injury Reporting - Report all accidents, injuries, or near-misses to HR and Safety ..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 18,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". --- ## Compensation & Payroll ### Salary Structure | Component | Details | |-----------|---------|..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 19,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "| | **Professional Tax** | As per state laws | | **ESI** | For eligible employees | ### Payroll Sche..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 20,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - Payslips are available on the HRMS portal. ### Payroll Deductions - **Statutory deductions**: PF..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 21,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". --- ## Reimbursement Policies ### Eligible Expenses - **Travel**: Air/train/bus fare (economy clas..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 22,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 3. Reimbursement processed with the next payroll cycle. ### Required Documentation - Original bill..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 23,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Technical Training**: Regular upskilling in core technologies/tools. - **Soft Skills Workshops..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 24,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - Mentorship and leadership development programs. ### Tuition & Certification Reimbursement - Up t..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 25,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Feedback & Coaching - Regular 1:1 meetings between employee and manager. - Constructive feedba..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 26,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". --- ## Privacy & Data Security ### Employee Data Privacy Policies - Compliance with Digital Person..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 27,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Company Commitment to Data Protection - Regular security audits and employee training. - Data ..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 28,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - Handover of duties and documentation required. ### Termination Process - May occur due to miscon..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 29,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Full & Final Settlement - Processed within 30-60 days of exit, including leave encashment and ..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 30,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". **Q: How is overtime calculated?** A: Paid at double the regular wage for hours beyond statutory l..."
+  },
+  {
+    "source": "employee_handbook.md",
+    "chunk_id": 31,
+    "accessible_roles": [
+      "C-Level",
+      "general",
+      "Employees",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Employee Referral Program - \u20b910,000 reward for successful referrals (paid after new hire compl..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 0,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "employee_id,full_name,role,department,email,location,date_of_birth,date_of_joining,manager_id,salary..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 1,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1002,Sakshi Malhotra,Relationship Manager,Sales,sakshi.malhotra@fintechco.com,Ahmedabad,1993-0..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 2,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1005,Shaurya Joshi,Financial Analyst,Finance,shaurya.joshi@fintechco.com,Delhi,1977-05-28,2020..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 3,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1008,Aadhya Chowdhury,Customer Support,Operations,aadhya.chowdhury@fintechco.com,Mumbai,1977-0..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 4,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1011,Sai Sharma,Business Analyst,Business,sai.sharma@fintechco.com,Ahmedabad,1975-03-02,2021-0..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 5,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1014,Isha Desai,Treasury Analyst,Finance,isha.desai@fintechco.com,Chennai,1983-11-05,2023-03-2..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 6,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1017,Prisha Saxena,DevOps Engineer,Technology,prisha.saxena@fintechco.com,Bengaluru,1977-05-17..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 7,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1020,Krishna Verma,Sales Manager,Sales,krishna.verma@fintechco.com,Mumbai,1978-06-25,2024-11-2..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 8,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1023,Krishna Gupta,Business Analyst,Business,krishna.gupta@fintechco.com,Lucknow,1992-03-23,20..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 9,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1026,Ishaan Patel,Blockchain Developer,Technology,ishaan.patel@fintechco.com,Delhi,1983-12-04,..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 10,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1029,Aditya Patel,Data Analyst,Data,aditya.patel@fintechco.com,Pune,1997-06-28,2020-01-17,FINE..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 11,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1032,Arjun Desai,Financial Analyst,Finance,arjun.desai@fintechco.com,Ahmedabad,1985-01-29,2024..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 12,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1035,Arjun Chopra,Treasury Analyst,Finance,arjun.chopra@fintechco.com,Bengaluru,1991-04-25,201..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 13,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1038,Diya Bhat,Security Engineer,Technology,diya.bhat@fintechco.com,Pune,1994-01-23,2018-02-22..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 14,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1041,Shaurya Joshi,Relationship Manager,Sales,shaurya.joshi@fintechco.com,Mumbai,1995-01-15,20..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 15,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1044,Isha Desai,Software Engineer,Technology,isha.desai@fintechco.com,Chennai,1988-12-22,2021-..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 16,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1047,Ishaan Singh,Business Analyst,Business,ishaan.singh@fintechco.com,Chennai,1981-11-25,2018..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 17,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1050,Myra Gupta,QA Engineer,Quality Assurance,myra.gupta@fintechco.com,Lucknow,1982-10-12,2021..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 18,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1053,Isha Sharma,Customer Support,Operations,isha.sharma@fintechco.com,Kolkata,1991-12-07,2020..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 19,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1056,Saanvi Bhat,UX Designer,Design,saanvi.bhat@fintechco.com,Delhi,1980-10-25,2018-08-15,FINE..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 20,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1059,Saanvi Malhotra,Customer Support,Operations,saanvi.malhotra@fintechco.com,Lucknow,1995-05..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 21,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1062,Ananya Iyer,Product Manager,Product,ananya.iyer@fintechco.com,Chennai,1982-07-13,2019-08-..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 22,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1065,Myra Garg,Blockchain Developer,Technology,myra.garg@fintechco.com,Lucknow,1989-05-09,2019..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 23,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1068,Shaurya Singh,Data Scientist,Data,shaurya.singh@fintechco.com,Jaipur,1979-05-02,2024-02-2..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 24,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1071,Vivaan Verma,Credit Officer,Finance,vivaan.verma@fintechco.com,Bengaluru,1986-04-27,2019-..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 25,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1074,Vihaan Chopra,Relationship Manager,Sales,vihaan.chopra@fintechco.com,Mumbai,1996-03-28,20..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 26,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1077,Krishna Nair,UX Designer,Design,krishna.nair@fintechco.com,Mumbai,1995-08-16,2019-12-07,F..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 27,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1080,Avni Reddy,Data Analyst,Data,avni.reddy@fintechco.com,Pune,1995-01-29,2021-02-24,FINEMP10..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 28,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1083,Krishna Malhotra,Sales Manager,Sales,krishna.malhotra@fintechco.com,Pune,1976-08-20,2022-..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 29,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1086,Diya Iyer,Data Analyst,Data,diya.iyer@fintechco.com,Kolkata,1989-09-24,2018-11-28,FINEMP1..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 30,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1089,Aarav Joshi,Security Engineer,Technology,aarav.joshi@fintechco.com,Lucknow,1977-05-07,202..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 31,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1092,Ananya Nair,HR Manager,HR,ananya.nair@fintechco.com,Hyderabad,1997-11-12,2019-11-25,FINEM..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 32,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1095,Ananya Khan,QA Engineer,Quality Assurance,ananya.khan@fintechco.com,Delhi,1997-04-09,2021..."
+  },
+  {
+    "source": "hr_data.csv",
+    "chunk_id": 33,
+    "accessible_roles": [
+      "C-Level",
+      "hr",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "csv",
+    "preview": "FINEMP1098,Arjun Patel,Risk Analyst,Risk,arjun.patel@fintechco.com,Jaipur,1994-01-29,2018-11-26,FINE..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 0,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "# Marketing Report for FinSolve Technologies Inc. - 2024 Executive Summary: ------------------------..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 1,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Despite a competitive market environment, FinSolve Technologies's marketing initiatives proved to ..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 2,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". **New Customer Acquisition**: A 20% increase in new customers, outpacing the industry average of 1..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 3,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". However, this metric remains a focus for improvement, particularly through personalized and AI-dri..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 4,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". The **\"InstantWire Global Expansion\"** campaign, which highlighted FinSolve Technologies\u2019s expansi..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 5,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 2. **Event Marketing**: Several high-profile industry events and partnerships, including fintech e..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 6,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 3. **Email Marketing**: Email campaigns focused on retention and nurturing existing customers resu..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 7,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Vendor Performance: ------------------------------------------- FinSolve Technologies relied on se..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 8,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Vendor A delivered strong results in terms of ad engagement and conversions but faced issues with ..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 9,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Customer Insights: ------------------------------------------- The Marketing Department's success ..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 10,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 2. **Customer Demographics**: The majority of new customers in 2024 were young professionals aged ..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 11,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Marketing Budget Breakdown: ------------------------------------------- In 2024, the total marketi..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 12,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 4. **Customer Retention**: $1M (7%) \u2013 Email marketing, customer loyalty programs, and CRM tools. 5..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 13,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 2. **Return on Ad Spend (ROAS)**: 4.5x for digital campaigns, a significant improvement over the 3..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 14,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Recommendations for Improvement: ------------------------------------------- 1. **Enhance Personal..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 15,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 3. **Optimize Vendor Relationships**: Improve vendor contract terms and increase the use of perfor..."
+  },
+  {
+    "source": "marketing_report_2024.md",
+    "chunk_id": 16,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Appendices: ------------------------------------------- Detailed performance charts and marketing ..."
+  },
+  {
+    "source": "marketing_report_q1_2024.md",
+    "chunk_id": 0,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "# Comprehensive Marketing Report - Q1 2024 ## Executive Summary Q1 2024 marked a foundational quarte..."
+  },
+  {
+    "source": "marketing_report_q1_2024.md",
+    "chunk_id": 1,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". With a $2 million marketing spend, we achieved significant milestones, setting a strong trajectory..."
+  },
+  {
+    "source": "marketing_report_q1_2024.md",
+    "chunk_id": 2,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **InstantPay Launch**: Introduced the InstantPay feature, a seamless payment solution, to attrac..."
+  },
+  {
+    "source": "marketing_report_q1_2024.md",
+    "chunk_id": 3,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ## Q1 - Projections & Targets Our Q1 2024 targets were designed to kickstart the year with momentu..."
+  },
+  {
+    "source": "marketing_report_q1_2024.md",
+    "chunk_id": 4,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Marketing Spend**: $2 million - Allocated across digital advertising (50%), product launch cam..."
+  },
+  {
+    "source": "marketing_report_q1_2024.md",
+    "chunk_id": 5,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ## Q1 - Benchmarks To evaluate the success of our marketing initiatives, we established the follow..."
+  },
+  {
+    "source": "marketing_report_q1_2024.md",
+    "chunk_id": 6,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Cost Per Acquisition (CPA)**: $13.33 - Calculated as marketing spend divided by the customer a..."
+  },
+  {
+    "source": "marketing_report_q1_2024.md",
+    "chunk_id": 7,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". The key objectives included: 1. **Expand Brand Presence in Europe** - Launched localized campaigns..."
+  },
+  {
+    "source": "marketing_report_q1_2024.md",
+    "chunk_id": 8,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - Achieved 52,000 sign-ups, exceeding the target by 4% through targeted promotions and referral in..."
+  },
+  {
+    "source": "marketing_report_q1_2024.md",
+    "chunk_id": 9,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ## Campaign Highlights ### Digital Marketing - **European Campaigns**: Recorded a 15% click-throug..."
+  },
+  {
+    "source": "marketing_report_q1_2024.md",
+    "chunk_id": 10,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Referral Program**: Generated 10,000 sign-ups through a refer-a-friend program offering cashba..."
+  },
+  {
+    "source": "marketing_report_q1_2024.md",
+    "chunk_id": 11,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ## Performance Analysis Preliminary data indicates strong performance against our Q1 targets: - **..."
+  },
+  {
+    "source": "marketing_report_q1_2024.md",
+    "chunk_id": 12,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **ROI**: Preliminary ROI stands at 3.1x, with final calculations pending year-end revenue data. ..."
+  },
+  {
+    "source": "marketing_report_q1_2024.md",
+    "chunk_id": 13,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 3. **Sustain Social Media Growth**: Invest in video content and influencer partnerships to maintai..."
+  },
+  {
+    "source": "marketing_report_q1_2024.md",
+    "chunk_id": 14,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". This report reflects our commitment to strategic growth and data-driven marketing as we build towa..."
+  },
+  {
+    "source": "marketing_report_q2_2024.md",
+    "chunk_id": 0,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "# Comprehensive Marketing Report - Q2 2024 ## Executive Summary Q2 2024 was a pivotal quarter dedica..."
+  },
+  {
+    "source": "marketing_report_q2_2024.md",
+    "chunk_id": 1,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". By focusing on regional expansion, improving retargeting efforts, and leveraging influencer partne..."
+  },
+  {
+    "source": "marketing_report_q2_2024.md",
+    "chunk_id": 2,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Key initiatives included: - **Brand Reinforcement**: Launched integrated campaigns to maintain lea..."
+  },
+  {
+    "source": "marketing_report_q2_2024.md",
+    "chunk_id": 3,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". These efforts were supported by a marketing spend of $2.5 million, allocated to achieve a balanced..."
+  },
+  {
+    "source": "marketing_report_q2_2024.md",
+    "chunk_id": 4,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". The key projections were: - **Customer Acquisition Target**: 200,000 new customers - Split evenly ..."
+  },
+  {
+    "source": "marketing_report_q2_2024.md",
+    "chunk_id": 5,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Marketing Spend**: $2.5 million - Allocated across digital advertising (45%), influencer partn..."
+  },
+  {
+    "source": "marketing_report_q2_2024.md",
+    "chunk_id": 6,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ## Q2 - Benchmarks To measure the effectiveness of our marketing initiatives, we established the f..."
+  },
+  {
+    "source": "marketing_report_q2_2024.md",
+    "chunk_id": 7,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Customer Retention Rate**: 80% - Targeted to maintain strong retention through improved custom..."
+  },
+  {
+    "source": "marketing_report_q2_2024.md",
+    "chunk_id": 8,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ## Q2 - Strategic Objectives Our strategic objectives for Q2 2024 were crafted to capitalize on re..."
+  },
+  {
+    "source": "marketing_report_q2_2024.md",
+    "chunk_id": 9,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 2. **Improve Email Retargeting Conversion by 10%** - Optimized email retargeting campaigns with pe..."
+  },
+  {
+    "source": "marketing_report_q2_2024.md",
+    "chunk_id": 10,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - Generated 600,000 impressions and 80,000 website visits through influencer-driven content. ## Ca..."
+  },
+  {
+    "source": "marketing_report_q2_2024.md",
+    "chunk_id": 11,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Influencer Partnerships - **Southeast Asia Influencers**: Secured partnerships with 20 regiona..."
+  },
+  {
+    "source": "marketing_report_q2_2024.md",
+    "chunk_id": 12,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Automation**: Implemented automated email workflows, reducing manual effort and improving resp..."
+  },
+  {
+    "source": "marketing_report_q2_2024.md",
+    "chunk_id": 13,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Conversion Rate**: Achieved a 12.1% conversion rate, meeting the 12.0% target through effectiv..."
+  },
+  {
+    "source": "marketing_report_q2_2024.md",
+    "chunk_id": 14,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 2. **Expand Influencer Network**: Partner with 15 additional influencers in Southeast Asia to sust..."
+  },
+  {
+    "source": "marketing_report_q2_2024.md",
+    "chunk_id": 15,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Our focus on influencer partnerships, email retargeting, and localized campaigns delivered measura..."
+  },
+  {
+    "source": "marketing_report_q3_2024.md",
+    "chunk_id": 0,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "# Comprehensive Marketing Report - Q3 2024 ## Executive Summary Q3 2024 marked a strategic focus on ..."
+  },
+  {
+    "source": "marketing_report_q3_2024.md",
+    "chunk_id": 1,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". By prioritizing customer retention, forging new merchant partnerships, and enhancing brand visibil..."
+  },
+  {
+    "source": "marketing_report_q3_2024.md",
+    "chunk_id": 2,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Key initiatives included: - **Customer Retention Programs**: Rolled out enhanced loyalty programs ..."
+  },
+  {
+    "source": "marketing_report_q3_2024.md",
+    "chunk_id": 3,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". These efforts were supported by a marketing spend of $2 million, strategically allocated to maximi..."
+  },
+  {
+    "source": "marketing_report_q3_2024.md",
+    "chunk_id": 4,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Revenue Target**: $7.5 million - Driven by increased transaction volume from loyalty programs ..."
+  },
+  {
+    "source": "marketing_report_q3_2024.md",
+    "chunk_id": 5,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ## Q3 - Benchmarks To evaluate the success of our marketing initiatives, we established the follow..."
+  },
+  {
+    "source": "marketing_report_q3_2024.md",
+    "chunk_id": 6,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Customer Retention Rate**: 82% - Targeted to improve retention through loyalty rewards and per..."
+  },
+  {
+    "source": "marketing_report_q3_2024.md",
+    "chunk_id": 7,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ## Q3 - Strategic Objectives Our strategic objectives for Q3 2024 were crafted to leverage market ..."
+  },
+  {
+    "source": "marketing_report_q3_2024.md",
+    "chunk_id": 8,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 2. **Launch New Merchant Partnerships in Latin America** - Secured partnerships with 15 regional m..."
+  },
+  {
+    "source": "marketing_report_q3_2024.md",
+    "chunk_id": 9,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - Partnered with local influencers, achieving a 20% increase in social media followers in target m..."
+  },
+  {
+    "source": "marketing_report_q3_2024.md",
+    "chunk_id": 10,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Latin American Expansion - **Merchant Partnerships**: Onboarded 15 merchants, contributing $1 ..."
+  },
+  {
+    "source": "marketing_report_q3_2024.md",
+    "chunk_id": 11,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Customer Feedback**: Implemented surveys to gather insights, leading to a 5% improvement in cu..."
+  },
+  {
+    "source": "marketing_report_q3_2024.md",
+    "chunk_id": 12,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Revenue**: Generated $7.2 million in revenue, with projections to reach $7.5 million pending f..."
+  },
+  {
+    "source": "marketing_report_q3_2024.md",
+    "chunk_id": 13,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". **Optimize Latin American Campaigns**: Increase ad spend by 15% in Colombia to address underperfor..."
+  },
+  {
+    "source": "marketing_report_q3_2024.md",
+    "chunk_id": 14,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Our focus on retention, strategic partnerships, and localized branding delivered measurable result..."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 0,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": "# Comprehensive Marketing Report - Q4 2024 ## Executive Summary The Q4 2024 marketing efforts were p..."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 1,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". By focusing on market penetration, strengthening customer relationships, and optimizing our market..."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 2,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". Key initiatives included: - **Targeted Campaigns**: Launched multi-channel campaigns across digita..."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 3,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". These efforts were supported by a strategic allocation of resources, with a marketing spend of $2...."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 4,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". The key targets were: - **Customer Acquisition Target**: 220,000 new customers - Focused on expand..."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 5,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Marketing Spend**: $2.5 million - Allocated across digital advertising (40%), traditional medi..."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 6,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ## Q4 - Benchmarks To measure the effectiveness of our marketing initiatives, we established the f..."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 7,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Customer Retention Rate**: 85% - Targeted to maintain high retention through loyalty programs ..."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 8,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ## Q4 - Strategic Objectives Our strategic objectives for Q4 2024 were designed to capitalize on s..."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 9,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - Leveraged email marketing and social media to promote limited-time offers, resulting in a 20% in..."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 10,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 3. **Improve Customer Retention with Targeted Offers** - Introduced a tiered loyalty program offer..."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 11,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Paid Search**: Optimized Google Ads campaigns, resulting in a 12% reduction in cost-per-click ..."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 12,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ### Customer Retention - **Loyalty Program**: Enrolled 50,000 customers in the new loyalty program..."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 13,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". ## Performance Analysis While a detailed performance review will be provided in the Q4 financial r..."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 14,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". - **Conversion Rate**: Achieved a 14.2% conversion rate, slightly below the 15.0% target, promptin..."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 15,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". 2. **Expand B2B Efforts**: Increase ABM budget by 10% to target additional enterprise verticals, s..."
+  },
+  {
+    "source": "market_report_q4_2024.md",
+    "chunk_id": 16,
+    "accessible_roles": [
+      "C-Level",
+      "Employees",
+      "marketing",
+      "Finance",
+      "Engineering",
+      "Marketing",
+      "HR"
+    ],
+    "file_type": "markdown",
+    "preview": ". By aligning our strategies with market opportunities and leveraging data-driven insights, we posit..."
+  }
+]

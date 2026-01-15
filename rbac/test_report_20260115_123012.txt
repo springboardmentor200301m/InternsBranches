@@ -1,0 +1,37 @@
+======================================================================
+INTEGRATION TEST REPORT
+======================================================================
+
+Date: 2026-01-15 12:30:12
+Total Tests: 25
+Passed: 25
+Failed: 0
+Success Rate: 100.0%
+
+Detailed Results:
+----------------------------------------------------------------------
+API Health                                         PASS
+Finance Login                                      PASS
+Finance User Info                                  PASS
+Finance RAG Query                                  PASS
+Finance Access Control /api/marketing/campaigns    PASS
+Finance Access Control /api/hr/employees           PASS
+Marketing Login                                    PASS
+Marketing User Info                                PASS
+Marketing RAG Query                                PASS
+Marketing Access Control /api/finance/reports      PASS
+Marketing Access Control /api/hr/employees         PASS
+HR Login                                           PASS
+HR User Info                                       PASS
+HR RAG Query                                       PASS
+HR Access Control /api/finance/reports             PASS
+HR Access Control /api/marketing/campaigns         PASS
+Employees Login                                    PASS
+Employees User Info                                PASS
+Employees RAG Query                                PASS
+Employees Access Control /api/finance/reports      PASS
+Employees Access Control /api/marketing/campaigns  PASS
+Employees Access Control /api/hr/employees         PASS
+Invalid Credentials                                PASS
+Unauthenticated Access                             PASS
+Invalid Token                                      PASS
