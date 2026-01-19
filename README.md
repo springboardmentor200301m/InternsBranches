@@ -53,5 +53,45 @@ A secure internal chatbot system that utilizes **Retrieval-Augmented Generation 
 git clone [YOUR_GITHUB_LINK]
 cd company-internal-chatbot
 ```
+### 2. Environment Setup
+```bash
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+### 3. Data Ingestion
+#### Run the ingestion script to parse raw files and build the vector index:
+```bash
+python data_ingestion.py
+```
+### 4. Run the Application
+#### Start the Backend:
+```bash
+uvicorn fastapi_rbac:app --reload
+```
+#### Run the Frontend:
+```bash
+streamlit run app.py
+```
 
+## 🔐 Role Hierarchy & Access
+### Access is strictly governed by the following permission mapping to ensure zero unauthorized data access:
+| Role | Accessible Data |
+|----|----|
+| Employee | General company handbook |
+| Finance | Finance + General |
+| HR | HR + General |
+| Marketing | Marketing + General |
+| Engineering | Engineering + General |
+| C-Level | Full access (all departments) |
 
+## 📊 Performance Metrics
+### The system is optimized to meet the following industry-standard targets:
+| Metric | Target |
+|----|----|
+| Document Parsing | 100% Accuracy |
+| Retrieval Latency | < 500ms |
+| End-to-End Response | < 3s |
+
+## 📄 License
+### This project is licensed under the MIT License.
