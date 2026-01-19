@@ -45,7 +45,7 @@ A secure internal chatbot system that utilizes **Retrieval-Augmented Generation 
 ├── chunks.json              # Intermediate document fragments
 ├── requirements.txt         # Project dependencies
 └── README.md                # Project documentation
-
+```
 ⚙️ Installation & Setup
 -----------------------
 
@@ -99,3 +99,4 @@ Access is strictly governed by the following permission mapping:
 ----------
 
 This project is licensed under the MIT License.
+
