@@ -56,32 +56,20 @@ Bash
 Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone [YOUR_GITHUB_LINK]  cd company-internal-chatbot   `
 
 ### 2\. Environment Setup
-
-Bash
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   python -m venv venv  source venv/bin/activate  # Windows: venv\Scripts\activate  pip install -r requirements.txt   `
+```   python -m venv venv  source venv/bin/activate  # Windows: venv\Scripts\activate  pip install -r requirements.txt   ```
 
 ### 3\. Data Ingestion
 
 Run the ingestion script to parse raw files and build the vector index:
-
-Bash
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   python data_ingestion.py   `
+```   python data_ingestion.py   ```
 
 ### 4\. Run the Application
 
 Start the Backend:
-
-Bash
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   uvicorn main:app --port 8000   `
+```   uvicorn main:app --port 8000   ```
 
 Start the Frontend:
-
-Bash
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   streamlit run app.py   `
+```   streamlit run app.py   ```
 
 🔐 Role Hierarchy & Access
 --------------------------
@@ -93,7 +81,9 @@ Access is strictly governed by the following permission mapping:
 📊 Performance Metrics
 ----------------------
 
-**MetricTargetDocument Parsing**100% Accuracy**Retrieval Latency**< 500ms**End-to-End Response**< 3 seconds
+**Metric Target Document Parsing**100% Accuracy*
+**Retrieval Latency**<**500ms*
+**End-to-End Response**<**3 seconds*
 
 📄 License
 ----------
