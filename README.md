@@ -47,4 +47,11 @@ A secure internal chatbot system that utilizes **Retrieval-Augmented Generation 
 └── README.md                # Project documentation
 ```
 
+## ⚙️ Installation & Setup
+### 1. Clone the Repository
+```bash
+git clone [YOUR_GITHUB_LINK]
+cd company-internal-chatbot
+```
+
 
