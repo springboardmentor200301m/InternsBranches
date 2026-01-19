@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)](https://streamlit.io/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 
 A secure internal chatbot system powered by **Retrieval-Augmented Generation (RAG)** that provides role-based access to company documents using semantic search and AI.
 
@@ -23,8 +23,7 @@ A secure internal chatbot system powered by **Retrieval-Augmented Generation (RA
 - [Project Structure](#project-structure)
 - [Security](#security)
 - [Performance](#performance)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ---
 
@@ -453,35 +452,11 @@ internal-chatbot-rbac/
 4. **API**: FastAPI with async support where possible
 
 ---
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Development Guidelines
-
-- Follow PEP 8 style guide
-- Add tests for new features
-- Update documentation
-- Maintain backward compatibility
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
 
 ## 👥 Authors
 
-- **LOKESHWAR G** - Initial work - [YourGitHub](https://github.com/yourusername)
+- **LOKESHWAR G** - Initial work - (https://github.com/Lokesh-g07)
 
 ### Acknowledgments
 
@@ -500,26 +475,6 @@ For issues, questions, or suggestions:
 
 ---
 
-## 🗺️ Roadmap
-
-### Phase 1 (Current)
-- ✅ JWT Authentication
-- ✅ Role-Based Access Control
-- ✅ RAG with Vector Search
-- ✅ Streamlit Frontend
-
-### Phase 2 (Future)
-- [ ] OpenAI GPT-4 Integration
-- [ ] Multi-turn conversations
-- [ ] Document upload interface
-- [ ] Real-time analytics dashboard
-
-### Phase 3 (Production)
-- [ ] PostgreSQL migration
-- [ ] Redis caching
-- [ ] Kubernetes deployment
-- [ ] Monitoring & alerts
-
 ---
 
 ## 📊 Statistics
@@ -535,4 +490,4 @@ For issues, questions, or suggestions:
 
 **Made by [Lokeshwar G]**
 
-**Last Updated**: January 8, 2026
+**Last Updated**: January 19, 2026
