@@ -1,0 +1,8 @@
+fastapi 
+streamlit 
+langchain 
+sentence-transformers 
+pandas
+faiss-cpu
+uvicorn
+markdown
