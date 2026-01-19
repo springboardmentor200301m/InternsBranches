@@ -46,47 +46,5 @@ A secure internal chatbot system that utilizes **Retrieval-Augmented Generation 
 ├── requirements.txt         # Project dependencies
 └── README.md                # Project documentation
 ```
-⚙️ Installation & Setup
------------------------
 
-### 1\. Clone the Repository
-
-Bash
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone [YOUR_GITHUB_LINK]  cd company-internal-chatbot   `
-
-### 2\. Environment Setup
-```   python -m venv venv  source venv/bin/activate  # Windows: venv\Scripts\activate  pip install -r requirements.txt   ```
-
-### 3\. Data Ingestion
-
-Run the ingestion script to parse raw files and build the vector index:
-```   python data_ingestion.py   ```
-
-### 4\. Run the Application
-
-Start the Backend:
-```   uvicorn main:app --port 8000   ```
-
-Start the Frontend:
-```   streamlit run app.py   ```
-
-🔐 Role Hierarchy & Access
---------------------------
-
-Access is strictly governed by the following permission mapping:
-
-**RolePermitted DepartmentsC-Level**Finance, HR, Engineering, Marketing, General**HR**HR, General**Finance**Finance, General**Engineering**Engineering, General**Employee**General
-
-📊 Performance Metrics
-----------------------
-
-**Metric Target Document Parsing**100% Accuracy*
-**Retrieval Latency**<**500ms*
-**End-to-End Response**<**3 seconds*
-
-📄 License
-----------
-
-This project is licensed under the MIT License.
 
