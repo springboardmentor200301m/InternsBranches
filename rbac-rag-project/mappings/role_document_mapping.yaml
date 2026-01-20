@@ -1,0 +1,31 @@
+Finance:
+  patterns:
+    - "finance"
+    - "financial_summary"
+    - "quarterly_financial_report"
+
+Marketing:
+  patterns:
+    - "marketing"
+    - "market_report"
+
+HR:
+  patterns:
+    - "hr"
+    - "hr_data"
+
+Engineering:
+  patterns:
+    - "engineering"
+    - "engineering_master_doc"
+
+Employees:
+  patterns:
+    - "employee_handbook"
+    - "general"
+
+C-Level:
+  patterns:
+    - "executive"
+    - "c-level"
+    - "all"
