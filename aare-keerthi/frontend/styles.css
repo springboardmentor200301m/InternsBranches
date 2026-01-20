@@ -1,0 +1,211 @@
+/* ===============================
+   Global App Styling
+   =============================== */
+
+body {
+    background-color: #f7f9fc;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Streamlit main container */
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 900px;
+}
+
+/* ===============================
+   Header & Titles
+   =============================== */
+
+h1, h2, h3 {
+    color: #1f2937; /* Dark gray */
+    font-weight: 600;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 1rem 0;
+}
+
+/* ===============================
+   Login Card
+   =============================== */
+
+.login-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    margin-top: 3rem;
+}
+
+/* ===============================
+   Role Badge
+   =============================== */
+
+.role-badge {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #2563eb; /* Blue */
+}
+
+/* Different roles (optional override in markdown) */
+.role-finance { background-color: #16a34a; }      /* Green */
+.role-hr { background-color: #7c3aed; }           /* Purple */
+.role-engineering { background-color: #0ea5e9; }  /* Sky blue */
+.role-marketing { background-color: #f59e0b; }    /* Amber */
+.role-employees { background-color: #6b7280; }    /* Gray */
+.role-c_level { background-color: #dc2626; }      /* Red */
+
+/* ===============================
+   Chat Messages
+   =============================== */
+
+.chat-user {
+    background-color: #e0f2fe;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid #0284c7;
+}
+
+.chat-bot {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #22c55e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+/* ===============================
+   Source Citations
+   =============================== */
+
+.source-box {
+    background-color: #f3f4f6;
+    padding: 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    color: #374151;
+    border-left: 3px solid #9ca3af;
+}
+
+/* ===============================
+   Confidence Score
+   =============================== */
+
+.confidence {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #065f46;
+}
+
+/* ===============================
+   Buttons
+   =============================== */
+
+button {
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+}
+
+button[kind="primary"] {
+    background-color: #2563eb !important;
+    color: white !important;
+}
+
+button[kind="secondary"] {
+    background-color: #e5e7eb !important;
+    color: #111827 !important;
+}
+
+/* ===============================
+   Input Fields
+   =============================== */
+
+input, textarea {
+    border-radius: 6px !important;
+    border: 1px solid #d1d5db !important;
+}
+
+/* ===============================
+   Footer / Info Text
+   =============================== */
+
+.footer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: 2rem;
+}
+/* General */
+body {
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Role badge */
+.role-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.role-finance { background: #2ecc71; color: white; }
+.role-hr { background: #e67e22; color: white; }
+.role-engineering { background: #3498db; color: white; }
+.role-marketing { background: #9b59b6; color: white; }
+.role-employees { background: #7f8c8d; color: white; }
+.role-c_level { background: #2c3e50; color: white; }
+
+/* Chat bubbles */
+.chat-user {
+    background: #eaf4ff;
+    border-left: 4px solid #3498db;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 6px;
+}
+
+.chat-bot {
+    background: #f4fff7;
+    border-left: 4px solid #2ecc71;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 6px;
+    line-height: 1.6;
+}
+
+/* Section titles */
+.section-title {
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* Sources */
+.source-box {
+    background: #f5f5f5;
+    border-left: 3px solid #7f8c8d;
+    padding: 6px 10px;
+    margin: 4px 0;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+/* Confidence */
+.confidence {
+    font-size: 13px;
+    margin-top: 6px;
+    color: #2c3e50;
+}
+

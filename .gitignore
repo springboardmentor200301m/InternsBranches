@@ -1,0 +1,70 @@
+# ===============================
+# Python
+# ===============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ===============================
+# Virtual Environments
+# ===============================
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ===============================
+# Environment Variables (Secrets)
+# ===============================
+.env
+.env.*
+
+# ===============================
+# Databases & Vector Stores
+# ===============================
+*.db
+*.sqlite3
+vectordb_store/
+
+# ===============================
+# Models (Local LLM files)
+# ===============================
+models/
+
+# ===============================
+# Generated Data & Embeddings
+# ===============================
+data/*.parquet
+embeddings/*.npy
+
+# ===============================
+# Logs & Cache
+# ===============================
+*.log
+.cache/
+.streamlit/
+
+# ===============================
+# Testing Artifacts
+# ===============================
+.coverage
+htmlcov/
+.pytest_cache/
+
+# ===============================
+# IDEs & Editors
+# ===============================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ===============================
+# OS Files
+# ===============================
+.DS_Store
+Thumbs.db
+data/*.parquet

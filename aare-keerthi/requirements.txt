@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+streamlit
+langchain
+sentence-transformers
+transformers
+pandas
+tqdm
+chromadb==0.3.*
+sqlalchemy
+pyjwt
+passlib[bcrypt]
+python-multipart
+pyarrow
+sentence-transformers
+chromadb
+numpy
