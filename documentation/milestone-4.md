@@ -1,5 +1,3 @@
----
-
 # 📕 Milestone 4 Documentation
 
 ## Frontend, System Integration, Testing & Deployment Readiness
@@ -8,7 +6,6 @@
 **Milestone Duration:** Weeks 7–8
 **Milestone Status:** ✅ Completed
 
----
 
 ## 1. Milestone Overview
 
