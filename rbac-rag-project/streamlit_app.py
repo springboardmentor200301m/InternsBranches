@@ -1,251 +1,241 @@
 import streamlit as st
 import base64
-from pathlib import Path
-import random
+import requests
+from jose import jwt
+
 from rbac_search import semantic_search, build_rag_context
 from llm_service import build_system_prompt, build_user_prompt, query_llm
 
-# ────────────────────────────────────────────────
+# -------------------------------------------------
+# JWT CONFIG (MUST MATCH BACKEND)
+# -------------------------------------------------
+SECRET_KEY = "supersecretkey"
+ALGORITHM = "HS256"
+AUTH_API = "http://127.0.0.1:8000/login"
+
+# -------------------------------------------------
 # PAGE CONFIG
-# ────────────────────────────────────────────────
+# -------------------------------------------------
 st.set_page_config(
     page_title="Secure Company AI Assistant",
     page_icon="🤖",
-    layout="wide",
-    initial_sidebar_state="collapsed"
+    layout="wide"
 )
 
-# ────────────────────────────────────────────────
-# LOAD ROBOT IMAGE AS BASE64
-# ────────────────────────────────────────────────
-def get_base64_of_bin_file(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
+# -------------------------------------------------
+# LOAD ROBOT IMAGE
+# -------------------------------------------------
+def load_image(path):
+    try:
+        with open(path, "rb") as f:
+            return base64.b64encode(f.read()).decode()
+    except:
+        return ""
 
-ROBOT_PATH = "assets/robot.png"  # or "assets/robot.png"
-try:
-    ROBOT_BASE64 = get_base64_of_bin_file(ROBOT_PATH)
-except FileNotFoundError:
-    ROBOT_BASE64 = ""
-    st.warning("robot.png not found! Place it in the same folder.")
+ROBOT_IMG = load_image("assets/robot.png")
 
-# ────────────────────────────────────────────────
-# CSS - BOLD SKY BLUE TEXT (No Glow)
-# ────────────────────────────────────────────────
-st.markdown(f"""
+# -------------------------------------------------
+# CSS
+# -------------------------------------------------
+st.markdown("""
 <style>
-    .stApp {{
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-        background-attachment: fixed;
-        color: #e2e8f0;
-    }}
+.stApp {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #e2e8f0;
+}
+header, footer {visibility: hidden;}
 
-    header, footer {{ visibility: hidden; height: 0px !important; }}
+.main-wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+}
 
-    /* Main wrapper */
-    .main-wrapper {{
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 5%;
-    }}
+.robot-img {
+    width: 420px;
+    animation: float 7s ease-in-out infinite;
+}
 
-    /* Robot section */
-    .robot-section {{
-        position: relative;
-        flex: 1;
-        text-align: center;
-        max-width: 50%;
-    }}
+@keyframes float {
+    0%,100% {transform: translateY(0);}
+    50% {transform: translateY(-25px);}
+}
 
-    .robot-img {{
-        width: 420px;
-        height: auto;
-        animation: float 7s ease-in-out infinite;
-    }}
+.login-card {
+    background: rgba(30,41,59,0.95);
+    border-radius: 24px;
+    padding: 50px;
+    width: 460px;
+    border: 1px solid rgba(96,165,250,0.3);
+}
 
-    .glow-circle {{
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(96, 165, 250, 0.12);
-        border: 1px solid rgba(96, 165, 250, 0.3);
-        z-index: -1;
-    }}
-    .circle1 {{ width: 500px; height: 500px; top: -25%; left: 0%; }}
-    .circle2 {{ width: 380px; height: 380px; bottom: -15%; right: 5%; }}
+.title {
+    color: #60a5fa;
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+}
 
-    @keyframes float {{
-        0%, 100% {{ transform: translateY(0px) rotate(0deg); }}
-        50% {{ transform: translateY(-30px) rotate(3deg); }}
-    }}
+.stButton>button {
+    background: linear-gradient(90deg,#3b82f6,#60a5fa);
+    color: white;
+    font-weight: bold;
+    padding: 14px;
+    border-radius: 12px;
+    width: 100%;
+}
+            /* ===============================
+   FORCE CHAT TEXT COLOR (WHITE)
+   =============================== */
 
-    /* Speech bubble */
-    .speech-bubble {{
-        position: absolute;
-        background: #3b82f6;
-        color: white;
-        padding: 16px 24px;
-        border-radius: 24px;
-        border-bottom-left-radius: 4px;
-        font-size: 1.15rem;
-        font-weight: 500;
-        max-width: 340px;
-        bottom: 15%;
-        left: 55%;
-    }}
+/* Chat message text */
+.stChatMessage p,
+.stChatMessage span,
+.stChatMessage div {
+    color: #ffffff !important;
+}
 
-    /* Login card */
-    .login-card {{
-        background: rgba(30, 41, 59, 0.88);
-        backdrop-filter: blur(18px);
-        border: 1px solid rgba(96, 165, 250, 0.3);
-        border-radius: 24px;
-        padding: 50px 45px;
-        width: 440px;
-        box-shadow: 0 25px 70px rgba(0,0,0,0.6);
-    }}
+/* User message bubble */
+[data-testid="stChatMessageUser"] {
+    color: #ffffff !important;
+}
 
-    /* Bold sky blue for Hello and Welcome */
-    .sky-blue-bold {{
-        color: #60a5fa !important;
-        font-weight: 900 !important;
-        text-align: center;
-    }}
+/* Assistant message bubble */
+[data-testid="stChatMessageAssistant"] {
+    color: #ffffff !important;
+}
 
-    .welcome-title {{
-        font-size: 3rem;
-    }}
+/* Input placeholder text */
+textarea::placeholder {
+    color: #cbd5e1 !important;
+}
 
-    .chat-title {{
-        font-size: 3.2rem;
-        margin: 2rem 0 1rem;
-    }}
+/* Captions & small text */
+.stCaption, .stMarkdown {
+    color: #e5e7eb !important;
+}
+/* ===============================
+   FIX INPUT LABEL VISIBILITY
+   =============================== */
 
-    /* Normal text remains readable */
-    p, span, .stMarkdown, .stCaption {{
-        color: #e2e8f0;
-    }}
+/* Text input & password labels */
+label, 
+label span,
+div[data-testid="stTextInput"] label,
+div[data-testid="stTextInput"] span,
+div[data-testid="stPassword"] label,
+div[data-testid="stPassword"] span {
+    color: #e5e7eb !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+}
 
-    /* Chat bubbles */
-    .stChatMessage {{
-        background: rgba(30, 41, 59, 0.7) !important;
-        border-radius: 16px !important;
-        padding: 16px !important;
-        margin: 12px 0 !important;
-        color: #e2e8f0 !important;
-    }}
+/* Optional: input text color */
+input {
+    color: #020617 !important;
+    font-size: 16px !important;
+}
 
-    /* Input & button */
-    .stChatInput input {{
-        background: rgba(51, 65, 85, 0.7) !important;
-        color: #e2e8f0 !important;
-        border: 1px solid rgba(96, 165, 250, 0.5) !important;
-        border-radius: 12px !important;
-    }}
-
-    .stButton > button {{
-        background: linear-gradient(90deg, #3b82f6, #60a5fa) !important;
-        color: white !important;
-        border-radius: 12px !important;
-        padding: 16px !important;
-        font-weight: bold !important;
-        width: 100% !important;
-    }}
 </style>
 """, unsafe_allow_html=True)
 
-# ────────────────────────────────────────────────
+# -------------------------------------------------
 # SESSION STATE
-# ────────────────────────────────────────────────
-if "logged_in" not in st.session_state:
-    st.session_state.logged_in = False
-if "username" not in st.session_state:
-    st.session_state.username = ""
-if "role" not in st.session_state:
-    st.session_state.role = ""
-if "messages" not in st.session_state:
-    st.session_state.messages = []
+# -------------------------------------------------
+for key, default in {
+    "logged_in": False,
+    "username": None,
+    "role": None,
+    "token": None,
+    "messages": []
+}.items():
+    if key not in st.session_state:
+        st.session_state[key] = default
 
-# ────────────────────────────────────────────────
-# LOGOUT BUTTON - RED COLOR - Top right after login
-# ────────────────────────────────────────────────
+# -------------------------------------------------
+# LOGOUT
+# -------------------------------------------------
 if st.session_state.logged_in:
-    col1, col2 = st.columns([9, 1])  # Makes it right-aligned
+    col1, col2 = st.columns([9,1])
     with col2:
-        if st.button("Logout", key="logout_btn", type="primary"):
+        if st.button("Logout"):
             st.session_state.clear()
             st.rerun()
 
-# ────────────────────────────────────────────────
-# LOGIN SCREEN
-# ────────────────────────────────────────────────
+# -------------------------------------------------
+# LOGIN (JWT AUTH)
+# -------------------------------------------------
 if not st.session_state.logged_in:
     st.markdown('<div class="main-wrapper">', unsafe_allow_html=True)
 
-    st.markdown(f"""
-    <div class="robot-section">
-        <div class="glow-circle circle1"></div>
-        <div class="glow-circle circle2"></div>
-        <img src="data:image/png;base64,{ROBOT_BASE64}" class="robot-img" alt="Cute Blue Robot">
-        <div class="speech-bubble">
-            Hello! I'm your secure assistant<br>
-            <strong>Can you tell me who you are?</strong>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown(
+        f"<img src='data:image/png;base64,{ROBOT_IMG}' class='robot-img'>",
+        unsafe_allow_html=True
+    )
 
     st.markdown('<div class="login-card">', unsafe_allow_html=True)
-    st.markdown('<div class="sky-blue-bold welcome-title">Welcome!</div>', unsafe_allow_html=True)
-    st.markdown('<div class="welcome-subtitle">Sign in to access company knowledge</div>', unsafe_allow_html=True)
+    st.markdown('<div class="title">RBAC AI Chatbot</div>', unsafe_allow_html=True)
+    st.caption("🔐 JWT-Secured Enterprise Access")
 
-    username = st.text_input("Your Name", placeholder="Enter your name")
-    role = st.selectbox("Your Role", [
-        "Admin", "C-Level", "Finance", "HR", "Engineering", "Employee"
-    ])
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
 
-    if st.button("Continue →"):
-        if username.strip():
-            st.session_state.logged_in = True
-            st.session_state.username = username.strip()
-            st.session_state.role = role
-            st.session_state.messages.append(("assistant", f"Hi {username}! I'm ready to help with {role}-related questions. What would you like to know? 🤖"))
-            st.rerun()
-        else:
-            st.error("Please enter your name")
+    if st.button("Login Securely"):
+        try:
+            res = requests.post(
+                AUTH_API,
+                json={"username": username, "password": password},
+                timeout=5
+            )
+
+            if res.status_code != 200:
+                st.error("Invalid username or password")
+            else:
+                token = res.json()["access_token"]
+                payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+
+                st.session_state.logged_in = True
+                st.session_state.username = payload["sub"]
+                st.session_state.role = payload["role"]
+                st.session_state.token = token
+                st.session_state.messages = [
+                    ("assistant",
+                     f"Welcome **{payload['sub']}** 👋  \nRole: **{payload['role']}**")
+                ]
+                st.rerun()
+
+        except Exception:
+            st.error("Authentication server not reachable")
 
     st.markdown("</div>", unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
     st.stop()
 
-# ────────────────────────────────────────────────
-# CHAT INTERFACE
-# ────────────────────────────────────────────────
-st.markdown(f'<h1 class="sky-blue-bold chat-title">Hello, {st.session_state.username}!</h1>', unsafe_allow_html=True)
-st.caption(f"Role: {st.session_state.role} • Secure Access Only")
+# -------------------------------------------------
+# CHAT UI
+# -------------------------------------------------
+st.markdown(f"## Hello, **{st.session_state.username}**")
+st.caption(f"🔐 Role: `{st.session_state.role}` | JWT Authenticated")
 
-for role, content in st.session_state.messages:
-    if role == "user":
-        st.chat_message("user").markdown(content)
-    else:
-        st.chat_message("assistant").markdown(content)
+for role, msg in st.session_state.messages:
+    st.chat_message(role).markdown(msg)
 
-if prompt := st.chat_input("Ask your question..."):
+if prompt := st.chat_input("Ask a role-authorized question..."):
     st.session_state.messages.append(("user", prompt))
     st.chat_message("user").markdown(prompt)
 
-    with st.spinner("Thinking..."):
-        chunks = semantic_search(prompt, st.session_state.role, k=4)
+    with st.spinner("🔍 Enforcing RBAC & generating answer..."):
+        chunks = semantic_search(prompt, st.session_state.role, k=3)
 
         if not chunks:
-            response = "I'm sorry, I don't have information available for your role about this topic."
+            answer = "❌ No information available for your role."
         else:
-            context_parts, sources = build_rag_context(chunks)
-            context = "\n\n".join(context_parts)
+            ctx, _ = build_rag_context(chunks)
             system = build_system_prompt(st.session_state.role)
-            user_prompt = build_user_prompt(context=context, query=prompt)
-            response = query_llm(user_prompt, system)
+            user_prompt = build_user_prompt("\n\n".join(ctx), prompt)
+            answer = query_llm(user_prompt, system)
 
-    st.session_state.messages.append(("assistant", response))
+    st.session_state.messages.append(("assistant", answer))
     st.rerun()
