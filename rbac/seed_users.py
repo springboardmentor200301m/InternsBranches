@@ -6,7 +6,6 @@ from sqlalchemy.orm import Session
 from database import SessionLocal, User, init_database
 from auth import hash_password
 
-# Sample users for each role
 SAMPLE_USERS = [
     {
         "username": "clevel_admin",

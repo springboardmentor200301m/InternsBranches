@@ -452,28 +452,6 @@ internal-chatbot-rbac/
 4. **API**: FastAPI with async support where possible
 
 ---
----
-
-## 👥 Authors
-
-- **LOKESHWAR G** - Initial work - (https://github.com/Lokesh-g07)
-
-### Acknowledgments
-
-- Sathyabama Institute of Science and Technology
-- Project Mentor: [Mukul Borade]
-- FastAPI and Streamlit communities
-
----
-
-## 📞 Support
-
-For issues, questions, or suggestions:
-
-- **Email**: glokeshwar01@gmail.com
-- **Documentation**: [Full Documentation](docs/)
-
----
 
 ---
 
@@ -490,4 +468,4 @@ For issues, questions, or suggestions:
 
 **Made by [Lokeshwar G]**
 
-**Last Updated**: January 19, 2026
+**Last Updated**: January 21, 2026
