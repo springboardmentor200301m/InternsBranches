@@ -8,10 +8,12 @@ def init_db():
     db = SessionLocal()
 
     users = [
-        User(username="finance_user", password="test", role="finance"),
-        User(username="hr_user", password="test", role="hr"),
-        User(username="employee_user", password="test", role="employees"),
-        User(username="admin", password="admin", role="c_level"),
+        User(username="finance_user", password="fin123", role="finance"),
+        User(username="marketing_user", password="mark123", role="marketing"),
+        User(username="hr_user", password="hr123", role="hr"),
+        User(username="engineering_user", password="eng123", role="engineering"),
+        User(username="employee_user", password="emp123", role="employees"),
+        User(username="admin", password="admin123", role="c_level"),
     ]
 
     for user in users:
@@ -23,4 +25,4 @@ def init_db():
 
 if __name__ == "__main__":
     init_db()
-    print("✅ Database initialized")
+    print("✅ Database initialized with all RBAC roles")
