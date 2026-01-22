@@ -1,151 +1,190 @@
 import streamlit as st
 import requests
 
-BACKEND_URL = "https://company-chatbot-infosys.streamlit.app/"
+# ================= CONFIG =================
+BACKEND_URL = "http://127.0.0.1:8000"
 
+st.set_page_config(
+    page_title="Oracle | Company Knowledge Chatbot",
+    layout="wide",
+)
 
+# ================= STYLING =================
+def apply_custom_css():
+    st.markdown("""
+    <style>
+        .stApp {
+            background: radial-gradient(circle at top right, #1e1b4b, #0f172a, #020617);
+            color: #e2e8f0;
+        }
+
+        [data-testid="stSidebar"] {
+            background-color: rgba(15, 23, 42, 0.85);
+            border-right: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .stTextInput input, .stTextArea textarea {
+            background-color: rgba(255,255,255,0.05) !important;
+            color: white !important;
+            border-radius: 10px !important;
+            border: 1px solid rgba(255,255,255,0.1) !important;
+        }
+
+        .stButton>button {
+            background: linear-gradient(45deg, #4338ca, #6d28d9) !important;
+            color: white !important;
+            border-radius: 10px !important;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        [data-testid="stChatMessage"] {
+            background-color: rgba(255,255,255,0.04);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 10px;
+        }
+
+        h1, h2, h3 {
+            color: #f8fafc;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
+# ================= AUTH HELPERS =================
 def get_auth_headers():
     token = st.session_state.get("access_token")
-    if not token:
-        return {}
-    return {"Authorization": f"Bearer {token}"}
+    return {"Authorization": f"Bearer {token}"} if token else {}
 
-
-def login(username: str, password: str) -> bool:
+def login(username, password):
     url = f"{BACKEND_URL}/auth/login"
-    data = {
-        "username": username,
-        "password": password,
-    }
-
-    # OAuth2 password flow expects form-encoded data
     headers = {"Content-Type": "application/x-www-form-urlencoded"}
+    data = {"username": username, "password": password}
 
     resp = requests.post(url, data=data, headers=headers)
     if resp.status_code != 200:
-        st.error("Login failed: incorrect username or password.")
+        st.error("❌ Invalid credentials")
         return False
 
     token_data = resp.json()
-    st.session_state["access_token"] = token_data["access_token"]
-    st.session_state["token_type"] = token_data["token_type"]
+    st.session_state.access_token = token_data["access_token"]
 
-    # Fetch current user info
-    me_resp = requests.get(f"{BACKEND_URL}/auth/me", headers=get_auth_headers())
-    if me_resp.status_code == 200:
-        st.session_state["current_user"] = me_resp.json()
-    else:
-        st.session_state["current_user"] = None
+    me = requests.get(f"{BACKEND_URL}/auth/me", headers=get_auth_headers())
+    st.session_state.current_user = me.json() if me.status_code == 200 else None
 
-    return True
-
+    st.rerun()
 
 def logout():
-    st.session_state.pop("access_token", None)
-    st.session_state.pop("token_type", None)
-    st.session_state.pop("current_user", None)
+    for k in ["access_token", "current_user", "messages"]:
+        st.session_state.pop(k, None)
+    st.rerun()
 
-
-def call_rag(query: str, top_k: int = 4):
+# ================= RAG =================
+def call_rag(query, top_k=4):
     url = f"{BACKEND_URL}/rag"
-    body = {"query": query, "top_k": top_k}
     headers = get_auth_headers()
     headers["Content-Type"] = "application/json"
+    resp = requests.post(url, json={"query": query, "top_k": top_k}, headers=headers)
 
-    resp = requests.post(url, json=body, headers=headers)
     if resp.status_code != 200:
-        st.error(f"Error from backend: {resp.status_code} - {resp.text}")
+        st.error("Backend error")
         return None
-
     return resp.json()
 
-
+# ================= LOGIN UI =================
 def render_login():
-    st.title("🔐 Company Internal Chatbot - Login")
+    apply_custom_css()
+    _, col, _ = st.columns([1, 1.4, 1])
 
-    username = st.text_input("Username", value="", key="login_username")
-    password = st.text_input("Password", type="password", key="login_password")
+    with col:
+        st.markdown("""
+        <h1 style='text-align:center; letter-spacing:10px;'>ORACLE</h1>
+        <p style='text-align:center; color:#94a3b8;'>Internal Company Knowledge System</p>
+        """, unsafe_allow_html=True)
 
-    if st.button("Login"):
-        if not username or not password:
-            st.warning("Please enter both username and password.")
-        else:
-            success = login(username, password)
-            if success:
-                st.rerun()
+        with st.form("login"):
+            u = st.text_input("Identity")
+            p = st.text_input("Passphrase", type="password")
+            submitted = st.form_submit_button("Authenticate", use_container_width=True)
 
+            if submitted:
+                login(u, p)
 
-def render_chat():
+# ================= SIDEBAR =================
+def render_sidebar():
     user = st.session_state.get("current_user")
-    st.sidebar.title("User Info")
+    with st.sidebar:
+        st.markdown("## SYSTEM")
 
-    if user:
-        st.sidebar.markdown(f"**Username:** `{user['username']}`")
-        st.sidebar.markdown(f"**Role:** `{user['role']}`")
-    else:
-        st.sidebar.warning("No user info loaded.")
+        if user:
+            st.markdown(f"""
+            <div style="padding:15px; background:rgba(255,255,255,0.05); border-radius:12px;">
+                <p style="color:#94a3b8; font-size:0.8rem;">USER</p>
+                <b>{user['username']}</b>
+                <p style="color:#94a3b8; font-size:0.8rem; margin-top:10px;">ROLE</p>
+                <b style="color:#818cf8;">{user['role']}</b>
+            </div>
+            """, unsafe_allow_html=True)
 
-    if st.sidebar.button("Logout"):
-        logout()
-        st.rerun()
+        st.write("---")
+        if st.button("Terminate Session", use_container_width=True):
+            logout()
 
-    st.title("🏢 Company Internal Chatbot")
+# ================= CHAT UI =================
+def render_chat():
+    apply_custom_css()
+    render_sidebar()
 
-    st.markdown(
-        "Ask questions about finance, marketing, HR, engineering, or company policies. "
-        "Responses are restricted based on your role."
-    )
+    st.title("Knowledge Oracle")
+    st.caption("Ask across HR, Finance, Engineering & Policy domains")
 
-    if "chat_history" not in st.session_state:
-        st.session_state["chat_history"] = []
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
 
-    with st.form("chat_form"):
-        query = st.text_area("Your question", height=80)
-        submitted = st.form_submit_button("Ask")
+    for msg in st.session_state.messages:
+        with st.chat_message(msg["role"]):
+            st.markdown(msg["content"])
+            if msg.get("sources"):
+                with st.expander("Source Metadata"):
+                    for s in msg["sources"]:
+                        st.markdown(
+                            f"**{s['department']}** | `{s['source_file']}` | score `{s['score']:.3f}`\n\n_{s['snippet']}_"
+                        )
 
-    if submitted:
-        if not query.strip():
-            st.warning("Please enter a question.")
-        else:
-            with st.spinner("Thinking..."):
-                rag_response = call_rag(query)
-            if rag_response is not None:
-                st.session_state["chat_history"].append(
-                    {
-                        "query": query,
-                        "answer": rag_response["answer"],
-                        "sources": rag_response["sources"],
-                    }
-                )
+    if query := st.chat_input("Query the archives..."):
+         # 1️⃣ Immediately show user message
+        with st.chat_message("user"):
+            st.markdown(query)
+        st.session_state.messages.append({"role": "user", "content": query})
 
-    # Render history (latest at bottom)
-    for item in st.session_state["chat_history"]:
-        st.markdown(f"**You:** {item['query']}")
-        st.markdown(f"**Bot:** {item['answer']}")
+        with st.chat_message("assistant"):
+            with st.spinner("Decrypting knowledge layers..."):
+                res = call_rag(query)
+                if res:
+                    answer = res["answer"]
+                    sources = res["sources"]
 
-        # Show sources in an expander
-        with st.expander("Sources used"):
-            for src in item["sources"]:
-                st.markdown(
-                    f"- `{src['id']}`  "
-                    f"(dept: `{src['department']}`, file: `{src['source_file']}`, score: `{src['score']:.3f}`)"
-                )
-                st.markdown(f"  ↳ _{src['snippet']}_")
-        st.markdown("---")
+                    st.markdown(answer)
+                    if sources:
+                        with st.expander("Source Metadata"):
+                            for s in sources:
+                                st.markdown(
+                                    f"**{s['department']}** | `{s['source_file']}` | `{s['score']:.3f}`\n\n_{s['snippet']}_"
+                                )
 
+                    st.session_state.messages.append({
+                        "role": "assistant",
+                        "content": answer,
+                        "sources": sources
+                    })
 
+# ================= MAIN =================
 def main():
-    st.set_page_config(
-        page_title="Company Internal Chatbot",
-        page_icon="💼",
-        layout="wide",
-    )
-
     if "access_token" not in st.session_state:
         render_login()
     else:
         render_chat()
-
 
 if __name__ == "__main__":
     main()
