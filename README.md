@@ -1,17 +1,53 @@
-## 🛠️ Implementation Highlights (Technical Report)
+# 🤖 Corporate Internal RAG Chatbot with RBAC
 
-### 🔹 1. Security Architecture
-* **Authentication:** Implemented **OAuth2 with Password Flow**. Passwords are hashed using `bcrypt` before storage.
-* **Session Management:** Uses **JWT (JSON Web Tokens)** with an expiration time of 30 minutes. The user's role is encoded directly into the token payload for stateless verification.
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![Framework](https://img.shields.io/badge/Framework-LangChain-green)
+![Security](https://img.shields.io/badge/Security-RBAC%20%2B%20JWT-red)
+![Status](https://img.shields.io/badge/Status-Completed-success)
 
-### 🔹 2. RAG Pipeline Optimization
-* **Vector Store:** utilized **ChromaDB** for local persistence of embeddings.
-* **Embeddings:** Applied `sentence-transformers/all-MiniLM-L6-v2` for efficient semantic search.
-* **Hybrid Search Strategy:**
-    1.  **Strict Mode:** Searches internal documents first with a high similarity threshold.
-    2.  [cite_start]**Fallback Mode:** If no documents match (e.g., "Capital of France"), the system seamlessly switches to General AI knowledge[cite: 12, 16, 27].
+## 📌 Project Overview
+This project is an internal **Question-Answering Bot** designed for secure corporate environments. It uses **Retrieval-Augmented Generation (RAG)** to answer employee queries based on internal documents (PDFs, Markdown, CSVs). 
 
-### 🔹 3. Role-Based Access Control (RBAC) Logic
-* **Filter Mechanism:** RBAC is enforced at the **Database Query Level**.
-* **Logic:** `results = vector_db.similarity_search(query, filter={"$or": [{"dept": user_role}, {"dept": "General"}]})`
-* [cite_start]**Outcome:** A Finance user is physically unable to retrieve HR documents, ensuring 100% data isolation[cite: 14, 15, 20].
+Crucially, it implements **Role-Based Access Control (RBAC)** to ensure employees only access data permitted for their department. For example, a Finance user can access financial reports, but cannot access HR salary data.
+
+---
+
+## 🚀 Key Features
+* **📚 RAG Pipeline:** Ingests and indexes internal documents for accurate, context-aware answers.
+* **🔐 Zero-Trust Security:** Every query is filtered based on the user's role (Finance, HR, Engineering, Marketing).
+* **🧠 Hybrid Intelligence:** Uses internal docs for specific questions and switches to General AI for general knowledge (e.g., coding help).
+* **🔑 JWT Authentication:** Secure login system with hashed passwords and session management.
+* **⚡ Modern Stack:** Built with FastAPI (Backend), Streamlit (Frontend), and ChromaDB (Vector Store).
+
+---
+
+## 🛠️ Tech Stack
+* **Frontend:** Streamlit
+* **Backend:** FastAPI
+* **LLM:** Google Gemini Pro (`gemini-pro`)
+* **Vector DB:** ChromaDB (Local Persistence)
+* **Orchestration:** LangChain
+* **Auth:** OAuth2 + JWT (HS256) + Bcrypt
+* **Embeddings:** HuggingFace (`sentence-transformers/all-MiniLM-L6-v2`)
+
+---
+
+## 📂 Project Structure
+```bash
+rag-chatbot/
+├── app/
+│   ├── main.py          # FastAPI Backend (Routes & Logic)
+│   ├── auth.py          # Authentication (Hashing & JWT)
+│   ├── ingest.py        # ETL Pipeline (Load -> Chunk -> Vectorize)
+│   └── models.py        # Pydantic Data Schemas
+├── frontend/
+│   └── streamlit_app.py # User Interface
+├── resources/           # Document Knowledge Base
+│   ├── Finance/         # (Restricted)
+│   ├── HR/              # (Restricted)
+│   ├── Marketing/       # (Restricted)
+│   ├── Engineering/     # (Restricted)
+│   └── General/         # (Public - Accessible by all)
+├── chroma_db/           # Local Vector Database
+├── requirements.txt     # Dependencies
+└── README.md            # Documentation
