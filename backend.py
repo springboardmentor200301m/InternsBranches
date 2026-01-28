@@ -134,7 +134,7 @@ def ask_question(request: QueryRequest):
     try:
         # IMPORT YOUR ACTUAL MODULES HERE
         from vector_db.semantic_search_rbac import semantic_search_rbac
-        from llm.hf_qa_runner import HuggingFaceQARunner
+        from hf_qa_runner import HuggingFaceQARunner
         
         print(f"\n🔍 Processing query: '{request.query}' for role: {request.role}")
         
@@ -302,7 +302,7 @@ def test_imports():
     """Test if your modules can be imported"""
     try:
         from vector_db.semantic_search_rbac import semantic_search_rbac
-        from llm.hf_qa_runner import HuggingFaceQARunner
+        from hf_qa_runner import HuggingFaceQARunner
         return {
             "success": True,
             "message": "All modules imported successfully",
@@ -360,7 +360,7 @@ if __name__ == "__main__":
     # Test imports
     try:
         from vector_db.semantic_search_rbac import semantic_search_rbac
-        from llm.hf_qa_runner import HuggingFaceQARunner
+        from hf_qa_runner import HuggingFaceQARunner
         print("✅ Successfully imported your RAG modules")
         
         # Quick test
@@ -397,4 +397,5 @@ if __name__ == "__main__":
     print('     -d \'{"query": "What was the revenue increase", "role": "Finance"}\'')
     print("=" * 70)
     
+
     uvicorn.run(app, host="0.0.0.0", port=8000)
